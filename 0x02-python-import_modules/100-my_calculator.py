@@ -10,19 +10,20 @@ if __name__ == "__main__":
     if arg_len != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
-    match(arv[2]):
+    sign = arv[2]
+    match(sign):
         case '+':
-            print("{} + {} = {}\
-            ".format(arv[1], arv[3], add(int(arv[1]), int(arv[3]))))
+            print("{} {} {} = {}\
+            ".format(arv[1], sign, arv[3], add(int(arv[1]), int(arv[3]))))
         case '-':
-            print("{} - {} = {}\
-            ".format(arv[1], arv[3], sub(int(arv[1]), int(arv[3]))))
+            print("{} {} {} = {}\
+            ".format(arv[1], sign, arv[3], sub(int(arv[1]), int(arv[3]))))
         case '*':
-            print("{} * {} = {}\
-            ".format(arv[1], arv[3], mul(int(arv[1]), int(arv[3]))))
+            print("{} {} {} = {}\
+            ".format(arv[1], sign, arv[3], mul(int(arv[1]), int(arv[3]))))
         case '/':
-            print("{} / {} = {}\
-            ".format(arv[1], arv[3], div(int(arv[1]), int(arv[3]))))
+            print("{} {} {} = {}\
+            ".format(arv[1], sign, arv[3], div(int(arv[1]), int(arv[3]))))
         case '_':
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
