@@ -17,7 +17,7 @@ if __name__ == "__main__":
         case '-':
             print("{} - {} = {}\
             ".format(arv[1], arv[3], sub(int(arv[1]), int(arv[3]))))
-        case '-':
+        case '*':
             print("{} * {} = {}\
             ".format(arv[1], arv[3], mul(int(arv[1]), int(arv[3]))))
         case '/':
