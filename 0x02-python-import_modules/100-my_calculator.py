@@ -24,6 +24,6 @@ if __name__ == "__main__":
         case '/':
             print("{} {} {} = {}\
             ".format(arv[1], sign, arv[3], div(int(arv[1]), int(arv[3]))))
-        case '_':
+        case _:
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
