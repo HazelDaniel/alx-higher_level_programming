@@ -16,5 +16,6 @@ if __name__ == "__main__":
     for i in range(count):
         if i == count:
             print("{}: {}".format(i + 1, sys.argv[i + 1]), end="")
-        print("{}: {}".format(i + 1, sys.argv[i + 1]))
+        else:
+            print("{}: {}".format(i + 1, sys.argv[i + 1]))
     pass
