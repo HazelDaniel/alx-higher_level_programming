@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 import sys
 
-pl = ""
-count = 0
-header_end = "."
-arg_len = len(sys.argv)
 if __name__ == "__main__":
+    pl = ""
+    count = 0
+    header_end = "."
+    arg_len = len(sys.argv)
     count = arg_len - 1
     if count > 1:
         pl = "s"
