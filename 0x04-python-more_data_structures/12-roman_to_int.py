@@ -2,7 +2,7 @@
 
 def roman_to_int(roman_string):
     sum = 0
-    if (str(type(roman_string)) != "<class 'str'>"):
+    if (not roman_string or str(type(roman_string)) != "<class 'str'>"):
         return sum
     roman_dict = dict([('M', 1000), ('D\
 ', 500), ('C', 100), ('L', 50), ('X', 10), ('V', 5), ('I', 1)])
