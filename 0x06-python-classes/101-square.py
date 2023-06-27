@@ -60,6 +60,9 @@ class Square:
     def __str__(self):
         res = "\n" * self.position[1]
         pad = " " * self.position[0]
-        for _ in range(self.size):
-            res += ("{}".format(pad + ("#" * self.size))) + "\n"
+        for i in range(self.size):
+            if i == self.size - 1:
+                res += ("{}".format(pad + ("#" * self.size)))
+            else:
+                res += ("{}".format(pad + ("#" * self.size))) + "\n"
         return res
