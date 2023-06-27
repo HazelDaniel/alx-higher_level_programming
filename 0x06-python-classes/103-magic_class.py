@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-import math
+
 """ A module that defines a class interpreted from bytecode and\
      initializes its fields """
+import math
 
 
 class MagicClass:
