@@ -8,7 +8,7 @@ class MagicClass:
     """ an anonymous class interpreted from a bytecode """
     def __init__(self, radius=0):
         """ the constructor method of the MagicClass class """
-        if (type(radius) is not int or type(radius) is not float):
+        if (type(radius) is not int and type(radius) is not float):
             raise TypeError("radius must be a number")
         self.__radius = radius
         return None
