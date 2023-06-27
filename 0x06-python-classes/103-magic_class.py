@@ -13,7 +13,10 @@ class MagicClass:
         return None
 
     def area(self):
+        """ a public instance method for getting the area of a MagicClass """
         return math.pi * self.__radius ** 2
 
     def circumference(self):
+        """ a public instance method for getting the\
+            circumference of a MagicClass """
         return 2 * math.pi * self.__radius
