@@ -1,6 +1,17 @@
 #!/usr/bin/python3
 """a module wherein a rectangle class is defined"""
-rect_val_check = __import__("1-rectangle").rect_val_check
+
+
+def rect_val_check(width=0, height=0):
+    """an input validator for width and height parameters"""
+    if (type(width) != int):
+        raise TypeError("width must be an integer")
+    if (width < 0):
+        raise ValueError("width must be >= 0")
+    if (type(height) != int):
+        raise TypeError("height must be an integer")
+    if (height < 0):
+        raise ValueError("height must be >= 0")
 
 
 class Rectangle:
