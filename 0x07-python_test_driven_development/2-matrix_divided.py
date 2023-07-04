@@ -3,7 +3,7 @@
 
 
 def matrix_divided(matrix, div):
-    """ divide through by mtrix """
+    """a function that divides through by matrix """
     if (not isinstance(matrix, list)
         or matrix == []
         or not all(isinstance(num, list) for num in matrix)
