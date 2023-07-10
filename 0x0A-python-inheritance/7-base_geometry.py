@@ -4,13 +4,14 @@
 
 class BaseGeometry:
     """an empty class called BaseGeometry"""
+
     def area(self):
-        """a public instance method that computes the area"""
+        """It raise an exception for area not def"""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """a public instance method that validates the input"""
-        if type(value) is not int:
+        if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
         if value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
