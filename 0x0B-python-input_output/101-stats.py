@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""a module that defines a function that prints accumulated metrics"""
 import sys
 
 
