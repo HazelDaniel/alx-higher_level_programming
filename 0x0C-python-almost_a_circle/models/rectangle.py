@@ -38,6 +38,13 @@ class Rectangle(Base):
         """returns the area of the Rectangle instance"""
         return self.width * self.height
 
+    def display(self):
+        """prints the visual representation of the Rectangle class"""
+        for _ in range(self.height):
+            for _ in range(self.width):
+                print("#", end="")
+            print()
+
     @property
     def width(self):
         """a public instance attribute for accessing the width"""
@@ -81,3 +88,9 @@ class Rectangle(Base):
         """a setter method for the public instance attribute 'y'"""
         validate_prop("y", val)
         self.__y = val
+
+    def __str__(self):
+        """returns the string representation of an instance"""
+        f_string = "[Rectangle] ({}) {}/{} - {}/{}"
+        return f_string.format(self.id, self.x, self.y,
+                               self.width, self.height)
