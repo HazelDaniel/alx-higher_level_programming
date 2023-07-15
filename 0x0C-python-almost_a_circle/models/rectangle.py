@@ -49,6 +49,12 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
+    def update(self, *args):
+        """updates some(or all) attributes of the rectangle class"""
+        attr_map = {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}
+        for ind, attr in enumerate(args):
+            self.__setattr__(attr_map[ind], attr)
+
     @property
     def width(self):
         """a public instance attribute for accessing the width"""
