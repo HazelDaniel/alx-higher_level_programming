@@ -40,8 +40,12 @@ class Rectangle(Base):
 
     def display(self):
         """prints the visual representation of the Rectangle class"""
-        for _ in range(self.height):
-            for _ in range(self.width):
+        pad_x = " " * self.x
+        pad_y = "\n" * self.y
+        print(pad_y, end="")
+        for hgt in range(self.height):
+            print(pad_x, end="")
+            for wdt in range(self.width):
                 print("#", end="")
             print()
 
