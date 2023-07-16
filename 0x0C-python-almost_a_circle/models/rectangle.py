@@ -53,6 +53,8 @@ class Rectangle(Base):
         """updates some(or all) attributes of the rectangle class"""
         attr_map = {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}
         for ind, attr in enumerate(args):
+            if ind > 4:
+                break
             self.__setattr__(attr_map[ind], attr)
         if (args):
             return

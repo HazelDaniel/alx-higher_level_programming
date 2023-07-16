@@ -28,7 +28,7 @@ class Base:
     def from_json_string(json_string):
         """a static method that decodes a json string"""
         if (not json_string):
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
 
