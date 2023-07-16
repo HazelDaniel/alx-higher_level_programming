@@ -108,3 +108,18 @@ class Rectangle(Base):
         f_string = "[Rectangle] ({}) {}/{} - {}/{}"
         return f_string.format(self.id, self.x, self.y,
                                self.width, self.height)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of an instance"""
+        all_attributes = {
+                    key: value
+                    for key, value in vars(self).items()
+                    if not key.startswith("_")
+                }
+        unmangled_attributes = {
+                    key[key.rfind("_") + 1:]: value
+                    for key, value in vars((self)).items()
+                    if key.startswith("_")
+                }
+        all_attributes.update(unmangled_attributes)
+        return all_attributes

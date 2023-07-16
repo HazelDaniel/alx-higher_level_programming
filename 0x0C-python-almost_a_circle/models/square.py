@@ -38,3 +38,20 @@ class Square(Rectangle):
         """returns the string representation of an instance"""
         f_string = "[Square] ({}) {}/{} - {}"
         return f_string.format(self.id, self.x, self.y, self.width)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of an instance"""
+        all_attributes = {
+                    key: value
+                    for key, value in vars(self).items()
+                    if not key.startswith("_")
+                }
+        unmangled_attributes = {
+                    key[key.rfind("_") + 1:]: value
+                    for key, value in vars((self)).items()
+                    if key.startswith("_") and key[key.rfind("_") + 1:]
+                    != "width" and key[key.rfind("_") + 1:] != "height"
+                }
+        all_attributes.update(unmangled_attributes)
+        all_attributes.update({"size": self.width})
+        return all_attributes
