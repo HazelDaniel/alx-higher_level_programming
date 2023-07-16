@@ -18,6 +18,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """a static method that serializes a dictionary list"""
         if (not list_dictionaries):
             return "[]"
         else:
@@ -25,6 +26,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """a static method that decodes a json string"""
         if (not json_string):
             return "[]"
         else:
@@ -32,6 +34,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """a class method that saves a list of objects into a json file"""
         res_file = cls.__name__
         res_file += ".json"
         if not list_objs:
@@ -41,3 +44,21 @@ class Base:
             list_objs = [obj.to_dictionary() for obj in list_objs]
             with open(res_file, mode="w", encoding="utf-8") as file:
                 json.dump(list_objs, file)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """a class method that creates a new instance from\
+            a dictionary of attributes"""
+        new_inst = cls(10, 10)
+        new_inst.update(**dictionary)
+        return new_inst
+
+    @classmethod
+    def load_from_file(cls):
+        """a class method that returns all instances from a json file"""
+        res_file = cls.__name__ + ".json"
+        with open(res_file, mode="r+", encoding="utf-8") as file:
+            res = file.read()
+            res_list = cls.from_json_string(res)
+            res_list = [cls.create(**dct) for dct in res_list]
+            return res_list
