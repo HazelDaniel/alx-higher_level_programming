@@ -43,17 +43,21 @@ class Rectangle(Base):
         pad_x = " " * self.x
         pad_y = "\n" * self.y
         print(pad_y, end="")
-        for hgt in range(self.height):
+        for _ in range(self.height):
             print(pad_x, end="")
-            for wdt in range(self.width):
+            for _ in range(self.width):
                 print("#", end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """updates some(or all) attributes of the rectangle class"""
         attr_map = {0: "id", 1: "width", 2: "height", 3: "x", 4: "y"}
         for ind, attr in enumerate(args):
             self.__setattr__(attr_map[ind], attr)
+        if (args):
+            return
+        for (key, value) in kwargs.items():
+            self.__setattr__(key, value)
 
     @property
     def width(self):
