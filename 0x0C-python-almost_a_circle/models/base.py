@@ -3,6 +3,7 @@
 
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -32,6 +33,43 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """a static method that draws Rectangles and Squares\
+            using the turtle module"""
+        turtoise = turtle.Turtle()
+        turtoise.screen.bgcolor("#b7312c")
+        turtoise.pensize(4)
+        turtoise.shape("turtle")
+
+        turtoise.color("#ffb8ff")
+        for rect in list_rectangles:
+            turtoise.showturtle()
+            turtoise.up()
+            turtoise.goto(rect.x, rect.y)
+            turtoise.down()
+            for i in range(2):
+                turtoise.forward(rect.width)
+                turtoise.left(90)
+                turtoise.forward(rect.height)
+                turtoise.left(90)
+            turtoise.hideturtle()
+
+        turtoise.color("#b5e3d8")
+        for sq in list_squares:
+            turtoise.showturtle()
+            turtoise.up()
+            turtoise.goto(sq.x, sq.y)
+            turtoise.down()
+            for i in range(2):
+                turtoise.forward(sq.width)
+                turtoise.left(90)
+                turtoise.forward(sq.height)
+                turtoise.left(90)
+            turtoise.hideturtle()
+
+        turtle.exitonclick()
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -74,7 +112,7 @@ class Base:
             else:
                 if cls.__name__ == "Rectangle":
                     fieldnames = ["id", "width", "height", "x", "y"]
-                else:
+                elif cls.__name__ == "Square":
                     fieldnames = ["id", "size", "x", "y"]
                 dict_write = csv.DictWriter(csvfile, fieldnames=fieldnames)
                 for obj in list_objs:
@@ -88,7 +126,7 @@ class Base:
             with open(filename, "r", newline="") as csvfile:
                 if cls.__name__ == "Rectangle":
                     fieldnames = ["id", "width", "height", "x", "y"]
-                else:
+                elif cls.__name__ == "Square":
                     fieldnames = ["id", "size", "x", "y"]
                 list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
                 list_dicts = [dict([k, int(v)] for k, v in d.items())
