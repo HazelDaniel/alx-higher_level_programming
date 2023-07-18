@@ -5,13 +5,10 @@ import os
 import sys
 import json
 import inspect
-from . import base
-from . import rectangle
-from . import square
+from models.rectangle import Rectangle
+from models.square import Square
+from models.base import Base
 
-Base = base.Base
-Rectangle = rectangle.Rectangle
-Square = square.Square
 
 
 class TestBase(unittest.TestCase):
