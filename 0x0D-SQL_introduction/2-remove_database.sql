@@ -1,4 +1,2 @@
-/*
- this is a fail-safe deletes the database hbtn_0c_0 in mysql server
-*/
+-- this is a fail-safe deletes the database hbtn_0c_0 in mysql server
 DROP DATABASE IF EXISTS hbtn_0c_0
