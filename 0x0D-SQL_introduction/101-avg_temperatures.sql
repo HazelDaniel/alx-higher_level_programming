@@ -1,4 +1,5 @@
--- this computes the maximum by column of a group of records in a table in the database
-SELECT state, MAX(value) AS max_temp FROM temperatures
-    GROUP BY state
-    ORDER BY state;
+-- this displays average temperatures by city in descending order
+SELECT city, AVG(value) AS avg_temp
+FROM temperatures
+GROUP BY city
+ORDER BY avg_temp DESC;
