@@ -1,5 +1,5 @@
 #!/usr/bin/node
 
-exports.callMeMoby = function (arg1, func) {
-  for (let i_ = 0; i_ < arg1; i++) func();
+exports.callMeMoby = function (x, theFunction) {
+  for (let i_ = 0; i_ < x; i++) theFunction();
 };
