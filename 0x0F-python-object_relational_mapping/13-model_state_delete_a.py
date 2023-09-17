@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" a module that prints the State object
-    from the name passed as argument
+""" a module that prints the State object from
+    the name passed as argument from the database
 """
 import sys
 from model_state import Base, State
@@ -13,6 +13,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    new_instance = session.query(State).filter_by(id=2).first()
-    new_instance.name = 'New Mexico'
+    for instance in session.query(State).filter(State.name.like('%a%')):
+        session.delete(instance)
     session.commit()
