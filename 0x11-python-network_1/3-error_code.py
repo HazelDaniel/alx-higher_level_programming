@@ -8,10 +8,6 @@ if __name__ == "__main__":
     import urllib.parse
     import urllib.error
     import sys
-    url_link = "https://alx-intranet.hbtn.io/status"
-
-    if len(sys.argv) < 2:
-        sys.exit()
 
     req = urllib.request.Request(sys.argv[1])
 
