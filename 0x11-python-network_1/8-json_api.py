@@ -14,9 +14,15 @@ if __name__ == "__main__":
     q_letter = sys.argv[1]
     headers = {"q": q_letter}
     res = requests.get("http://0.0.0.0:5000/search_user", headers=headers)
+    json_res = {}
+    bool_res = 0
     try:
         json_res = res.json()
         if not json_res:
             print("No result")
+            bool_res = 1
+        else:
+            print(f"[{json_res['id']}] {json_res['name']}")
     except json.decoder.JSONDecodeError:
-        print("Not a valid json")
+        if not bool_res:
+            print("Not a valid json")
