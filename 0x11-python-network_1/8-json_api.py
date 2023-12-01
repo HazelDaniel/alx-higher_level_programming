@@ -24,4 +24,4 @@ if __name__ == "__main__":
             print(f"[{json_res['id']}] {json_res['name']}")
     except json.decoder.JSONDecodeError:
         if not bool_res:
-            print("Not a valid json")
+            print("Not a valid JSON")
