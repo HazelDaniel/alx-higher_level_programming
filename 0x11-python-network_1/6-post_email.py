@@ -13,4 +13,4 @@ if __name__ == "__main__":
     headers = {"email": sys.argv[2]}
     req_url = sys.argv[1]
     res = requests.get(req_url, headers=headers)
-    print(res.json())
+    print(res.text)
