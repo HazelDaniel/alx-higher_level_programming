@@ -8,10 +8,9 @@ if __name__ == "__main__":
     import sys
     import json
 
-    if len(sys.argv) < 2:
-        exit()
-
-    q_letter = sys.argv[1]
+    q_letter = ""
+    if len(sys.argv) > 1:
+        q_letter = sys.argv[1]
     headers = {"q": q_letter}
     res = requests.get("http://0.0.0.0:5000/search_user", headers=headers)
     json_res = {}
