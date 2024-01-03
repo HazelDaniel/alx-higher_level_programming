@@ -28,7 +28,7 @@ const fetchEndpoint = async () => {
   const response = await fetchEndpoint();
   for (const todo of response) {
     if (todo.completed) {
-      if (!(usersObj.hasOwnProperty(todo.userId))) {
+      if (!(todo.userId in usersObj)) {
         usersObj[todo.userId] = 1;
       } else {
         usersObj[todo.userId] = usersObj[todo.userId] + 1;
