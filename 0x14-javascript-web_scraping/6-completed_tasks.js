@@ -30,7 +30,6 @@ const fetchEndpoint = async () => {
   for (let todo of response) {
     if (todo.completed) {
       if (!(users_obj.hasOwnProperty(todo.userId))) {
-        console.log(todo.userId);
         users_obj[todo.userId] = 1;
       }
       else {
