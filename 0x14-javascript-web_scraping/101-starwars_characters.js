@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // a script that displays the status code of a GET request.
 
-const request = require("request");
+const request = require('request');
 const cmdArgs = process.argv.slice(2);
 
 if (cmdArgs.length < 1) {
@@ -16,7 +16,7 @@ const fetchEndpoint = async (requestUrl) => {
       if (err) {
         reject(err);
       }
-      let body = JSON.parse(res.body);
+      const body = JSON.parse(res.body);
       resolve(body);
     });
   });
@@ -37,7 +37,7 @@ const getMovie = async () => {
 };
 
 (async () => {
-  let movie = await getMovie();
+  const movie = await getMovie();
   const characters = movie.characters;
   const characterRequests = characters.map((el) => fetchEndpoint(el));
   let characterResponse = await Promise.all(characterRequests);

@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // a script that reads and prints the content of a file.
 
-const fs = require("fs");
+const fs = require('fs');
 
 const cmdArgs = process.argv.slice(2);
 
@@ -19,7 +19,7 @@ const readFileAsync = (filePath, encoding) => {
 
 (async () => {
   try {
-    const data = await readFileAsync(cmdArgs[0], "utf8");
+    const data = await readFileAsync(cmdArgs[0], 'utf8');
     console.log(data);
   } catch (err) {
     console.error(err);

@@ -1,13 +1,13 @@
 #!/usr/bin/node
 // a script that writes a content to a file.
 
-const fs = require("fs");
+const fs = require('fs');
 
 const cmdArgs = process.argv.slice(2);
 
 if (cmdArgs.length < 2) {
-  console.log("wrong number of input arguments. requires at least 3")
-  process.exit(98)
+  console.log('wrong number of input arguments. requires at least 3');
+  process.exit(98);
 }
 
 const writeFileAsync = (filePath, content, encoding) => {
@@ -24,7 +24,7 @@ const writeFileAsync = (filePath, content, encoding) => {
 
 (async () => {
   try {
-    await writeFileAsync(cmdArgs[0], cmdArgs[1], "utf8");
+    await writeFileAsync(cmdArgs[0], cmdArgs[1], 'utf8');
   } catch (err) {
     console.error(err);
   }
