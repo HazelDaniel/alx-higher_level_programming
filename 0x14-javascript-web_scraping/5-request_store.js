@@ -16,7 +16,7 @@ let filePath = cmdArgs[1];
 
 const writeFileAsync = (filePath, content, encoding) => {
   return new Promise((resolve, reject) => {
-    fs.writeFile(filePath, `${content}\n`, encoding, (err, data) => {
+    fs.writeFile(filePath, `${content}`, encoding, (err, data) => {
       if (err) {
         reject(err);
       } else {
